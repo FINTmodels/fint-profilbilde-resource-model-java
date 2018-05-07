@@ -3,26 +3,15 @@
 package no.fint.model.resource.avatar;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.ToString;
+import lombok.*;
+import no.fint.model.FintMainObject;
+import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.resource.FintLinks;
+import no.fint.model.resource.Link;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
-import no.fint.model.FintMainObject;
-import no.fint.model.resource.FintLinks;
-import no.fint.model.resource.Link;
-import no.fint.model.resource.felles.kompleksedatatyper.AdresseResource;
-import java.util.Date;
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.felles.kompleksedatatyper.Personnavn;
-import no.fint.model.resource.felles.basisklasser.AktorResource;
 
 @Data
 @NoArgsConstructor
@@ -30,10 +19,23 @@ import no.fint.model.resource.felles.basisklasser.AktorResource;
 @ToString
 public class AvatarResource implements FintMainObject, FintLinks {
     // Attributes
+
+    /**
+     * Permanent identifikator til bildet.
+     */
     @NonNull
     private Identifikator systemId;
+
+    /**
+     * URL til bildefil.
+     */
     @NonNull
     private String filnavn;
+
+    /**
+     * Innhold i <pre>Authorization:</pre> header for å hente bilde.
+     */
+    private String autorisasjon;
 
     // Relations
     @Getter
