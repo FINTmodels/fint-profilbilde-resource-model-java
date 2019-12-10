@@ -1,5 +1,3 @@
-// Built from tag v2.7.0
-
 package no.fint.model.resource.profilbilde;
 
 import com.fasterxml.jackson.core.type.TypeReference;
