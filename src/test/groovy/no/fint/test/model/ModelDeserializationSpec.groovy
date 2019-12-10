@@ -1,10 +1,9 @@
 package no.fint.test.model
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import no.fint.model.resource.avatar.AvatarResource
-import no.fint.model.resource.avatar.AvatarResources
+import no.fint.model.resource.profilbilde.ProfilbildeResource
+import no.fint.model.resource.profilbilde.ProfilbildeResources
 
-//import AvatarResources
 import spock.lang.Specification
 
 class ModelDeserializationSpec extends Specification {
@@ -14,24 +13,24 @@ class ModelDeserializationSpec extends Specification {
         objectMapper = new ObjectMapper()
     }
 
-    def "Read AvatarResource from avatar.json"() {
+    def "Read ProfilbildeResource from profilbilde.json"() {
         given:
-        def input = getClass().getResourceAsStream("/avatar.json")
+        def input = getClass().getResourceAsStream("/profilbilde.json")
 
         when:
-        def result = objectMapper.readValue(input, AvatarResource.class)
+        def result = objectMapper.readValue(input, ProfilbildeResource.class)
         println(result)
 
         then:
         result
     }
 
-    def "Read AvatarResource from avatarresource.json"() {
+    def "Read ProfilbildeResource from profilbilderesource.json"() {
         given:
-        def input = getClass().getResourceAsStream("/avatarresource.json")
+        def input = getClass().getResourceAsStream("/profilbilderesource.json")
 
         when:
-        def result = objectMapper.readValue(input, AvatarResource.class)
+        def result = objectMapper.readValue(input, ProfilbildeResource.class)
         println(result)
 
         then:
@@ -39,12 +38,12 @@ class ModelDeserializationSpec extends Specification {
     }
 
 
-    def "Read AvatarResource from avatarresourcelinks.json"() {
+    def "Read ProfilbildeResource from profilbilderesourcelinks.json"() {
         given:
-        def input = getClass().getResourceAsStream("/avatarresourcelinks.json")
+        def input = getClass().getResourceAsStream("/profilbilderesourcelinks.json")
 
         when:
-        def result = objectMapper.readValue(input, AvatarResource.class)
+        def result = objectMapper.readValue(input, ProfilbildeResource.class)
         println(result)
 
         then:
@@ -52,12 +51,12 @@ class ModelDeserializationSpec extends Specification {
         result.filnavn
     }
 
-    def "Read AvatarResources from avatarresourceslinks.json"() {
+    def "Read ProfilbildeResources from profilbilderesourceslinks.json"() {
         given:
-        def input = getClass().getResourceAsStream("/avatarresourceslinks.json")
+        def input = getClass().getResourceAsStream("/profilbilderesourceslinks.json")
 
         when:
-        def result = objectMapper.readValue(input, AvatarResources.class)
+        def result = objectMapper.readValue(input, ProfilbildeResources.class)
         println(result)
 
         then:

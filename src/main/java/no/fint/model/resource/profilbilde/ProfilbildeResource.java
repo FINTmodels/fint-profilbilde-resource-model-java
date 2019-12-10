@@ -1,4 +1,4 @@
-package no.fint.model.resource.avatar;
+package no.fint.model.resource.profilbilde;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
@@ -15,7 +15,7 @@ import java.util.Map;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class AvatarResource implements FintMainObject, FintLinks {
+public class ProfilbildeResource implements FintMainObject, FintLinks {
     // Attributes
 
     /**

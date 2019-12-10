@@ -10,7 +10,7 @@ apply plugin: 'maven'
 sourceCompatibility = 1.8
 
 jar {
-    baseName = 'fint-avatar-resource-model-java'
+    baseName = 'fint-profilbilde-resource-model-java'
 }
 
 repositories {

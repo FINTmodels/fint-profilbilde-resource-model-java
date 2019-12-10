@@ -3,7 +3,7 @@ package no.fint.test.model
 import com.fasterxml.jackson.databind.ObjectMapper
 import groovy.json.JsonSlurper
 import no.fint.model.resource.Link
-import no.fint.model.resource.avatar.AvatarResource
+import no.fint.model.resource.profilbilde.ProfilbildeResource
 import spock.lang.Specification
 
 class ModelSerializationSpec extends Specification {
@@ -17,7 +17,7 @@ class ModelSerializationSpec extends Specification {
 
     def "Serialize AvatarResource with links"() {
         given:
-        def person = new AvatarResource(
+        def person = new ProfilbildeResource(
                 filnavn: "dummy.jpg")
         person.addPerson(Link.with("/felles/kjonn/systemid/1"))
         person.addPersonalressurs(Link.with("/felles/land/systemid/no"))
