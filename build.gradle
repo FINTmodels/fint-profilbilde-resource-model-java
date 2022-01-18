@@ -1,30 +1,28 @@
 plugins {
-    id 'com.jfrog.bintray' version '1.8.0'
-    id 'com.github.ben-manes.versions' version '0.17.0'
+    id 'com.github.ben-manes.versions' version '0.21.0'
 }
 
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.8
-
-jar {
-    baseName = 'fint-profilbilde-resource-model-java'
-}
+group = 'no.fint'
 
 repositories {
+    mavenCentral()
     maven {
-        url "http://dl.bintray.com/fint/maven"
+        url "https://repo.fintlabs.no/releases"
     }
     mavenLocal()
-    jcenter()
 }
 
-apply from: 'https://raw.githubusercontent.com/FINTlibs/fint-buildscripts/v1.3.0/dependencies.gradle'
+apply from: 'https://raw.githubusercontent.com/FINTlibs/fint-buildscripts/v1.6.0/dependencies.gradle'
+
 dependencies {
-    compile("no.fint:fint-felles-resource-model-java:2.7.0")
-    compile('no.fint:fint-model-resource:0.3.0-rc-3')
+    compile("no.fint:fint-felles-resource-model-java:3.10.0")
+    compile('no.fint:fint-model-resource:0.4.1')
 
     compileOnly("org.projectlombok:lombok:${lombokVersion}")
 
@@ -47,6 +45,5 @@ test {
     }
 }
 
-if (project.hasProperty('bintrayUser') && project.hasProperty('bintrayKey')) {
-    apply from: 'https://raw.githubusercontent.com/FINTlibs/fint-buildscripts/v1.3.0/bintray.gradle'
-}
+apply from: 'https://raw.githubusercontent.com/FINTLabs/fint-buildscripts/master/reposilite.gradle'
+
